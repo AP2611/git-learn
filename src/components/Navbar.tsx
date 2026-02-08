@@ -24,8 +24,18 @@ const Navbar = () => {
       transition={{ duration: 0.5, delay: 0.3 }}
     >
       <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
-        <a href="#" className="font-mono font-bold text-primary text-lg glow-text">
-          git<span className="text-accent">Learn</span>
+        <a href="#" className="font-mono font-bold text-primary text-lg glow-text flex items-center gap-2">
+          <img 
+            src="/git-logo.svg" 
+            alt="Git Logo" 
+            className="w-6 h-6"
+            onError={(e) => {
+              // Fallback if image fails to load
+              const target = e.target as HTMLImageElement;
+              target.style.display = 'none';
+            }}
+          />
+          gitlearn
         </a>
         <div className="hidden lg:flex items-center gap-1">
           {navItems.map((item) => (
